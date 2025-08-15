@@ -51,7 +51,7 @@ export default function TodoList() {
         />
         <button
           onClick={handleAdd}
-          className="bg-pastelPink hover:bg-pastelBlue text-white p-2 rounded-md transition-all duration-300"
+          className="bg-pink-300 cursor-pointer hover:bg-pastelBlue text-white p-2 rounded-md transition-all duration-300"
         >
           Add
         </button>

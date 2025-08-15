@@ -22,7 +22,7 @@ export default function RegisterForm({ onRegister }: { onRegister: () => void })
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-pastelBlue">
+    <div className="flex items-center justify-center min-h-screen bg-pink-400">
       <form onSubmit={handleSubmit} className="glass p-8 w-96 flex flex-col gap-4 animate-fade-in">
         <h2 className="text-2xl font-bold text-white text-center">🌸 Register 🌸</h2>
         {error && <div className="text-red-500">{error}</div>}
