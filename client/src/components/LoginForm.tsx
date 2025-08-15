@@ -13,6 +13,7 @@ export default function LoginForm({ onLogin }: { onLogin: () => void }) {
     try {
       const data = await login(email, password);
       setUser(data);
+      console.log(data);
       onLogin();
     } catch (err: unknown) {
       if (err instanceof Error) {
