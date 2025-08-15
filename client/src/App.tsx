@@ -1,4 +1,10 @@
+import LoginForm from "./components/LoginForm";
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <div className="bg-sky-950">
+      <LoginForm />
+    </div>
+  );
 };
 export default App;
