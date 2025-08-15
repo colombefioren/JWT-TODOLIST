@@ -43,7 +43,7 @@
 
 ---
 
-## 🔌 Backend API Overview
+## 🔌 Backend API Overview (Deployed on Render)
 
 * `POST /api/auth/register` – Create new user
 * `POST /api/auth/login` – Authenticate & return token
