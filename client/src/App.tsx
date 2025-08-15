@@ -7,6 +7,7 @@ import { logout } from "./services/auth";
 import { useUserStore } from "./store/userStore";
 
 export default function App() {
+
   const [userLogged, setUserLogged] = useState(
     !!localStorage.getItem("accessToken")
   );
