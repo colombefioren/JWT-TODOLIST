@@ -41,7 +41,7 @@ export default function LoginForm({ onLogin }: { onLogin: () => void }) {
           onChange={e => setPassword(e.target.value)}
           required
         />
-        <button className="bg-pastelBlue hover:bg-pastelGreen text-white p-2 rounded-md transition-all duration-300">
+        <button className="bg-blue-300 cursor-pointer hover:bg-pastelGreen text-white p-2 rounded-md transition-all duration-300">
           Login
         </button>
       </form>

@@ -1,14 +1,17 @@
 export async function apiFetch(endpoint: string, options: RequestInit = {}) {
-  const token = localStorage.getItem('accessToken');
+  const token = localStorage.getItem("accessToken");
   const headers: Record<string, string> = {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
     ...(options.headers as Record<string, string>),
   };
-  if (token) headers['Authorization'] = `Bearer ${token}`;
+  if (token) headers["Authorization"] = `Bearer ${token}`;
 
-  const res = await fetch(`/api${endpoint}`, { ...options, headers });
+  const res = await fetch(`${import.meta.env.BASE_URLL}${endpoint}`, {
+    ...options,
+    headers,
+  });
   const data = await res.json();
 
-  if (!res.ok) throw new Error(data.error || 'API error');
+  if (!res.ok) throw new Error(data.error || "API error");
   return data;
 }
