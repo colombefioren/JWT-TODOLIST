@@ -3,12 +3,14 @@ import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import TodoList from "./components/TodoList";
 import { logout } from "./services/auth";
+import { useUserStore } from "./store/userStore";
 
 export default function App() {
   const [userLogged, setUserLogged] = useState(
     !!localStorage.getItem("accessToken")
   );
   const [showRegister, setShowRegister] = useState(false);
+  const user = useUserStore((state) => state.user);
 
   if (!userLogged) {
     return (
@@ -29,9 +31,16 @@ export default function App() {
     );
   }
 
+  console.log("The user is ", user);
+
   return (
     <div className="bg-pink-500 h-screen w-full">
-      <div className="p-4 flex justify-end gap-2">
+      <div className="p-4 flex justify-end items-center gap-5">
+        {user && (
+          <>
+            <span className="text-white font-bold">{user.name.toUpperCase()}</span>
+          </>
+        )}
         <button
           onClick={() => {
             logout();

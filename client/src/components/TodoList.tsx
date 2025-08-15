@@ -40,10 +40,9 @@ export default function TodoList() {
   return (
     <div className="p-4 min-h-screen bg-pastelGreen flex flex-col items-center">
       <h1 className="text-3xl mb-4 font-bold text-white animate-bounce">
-        🌈 Kawaii Todos 🌈
+        🌈 Todos 🌈
       </h1>
 
-      {/* Input */}
       <div className="flex gap-2 mb-4">
         <input
           value={newTodo}
@@ -59,7 +58,6 @@ export default function TodoList() {
         </button>
       </div>
 
-      {/* Todo List */}
       <ul className="w-96 flex flex-col gap-2">
         {todos.map((todo) => (
           <li
@@ -71,7 +69,6 @@ export default function TodoList() {
                   : "bg-white/20 text-white"
               }`}
           >
-            {/* Checkbox + Title */}
             <label className="flex items-center gap-2 cursor-pointer">
               <input
                 type="checkbox"
@@ -88,7 +85,6 @@ export default function TodoList() {
               </span>
             </label>
 
-            {/* Delete button */}
             <button
               onClick={() => handleDelete(todo.id)}
               className="bg-red-400 p-1 rounded-md hover:bg-red-500 transition-all duration-300"
