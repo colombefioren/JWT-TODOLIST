@@ -1,24 +1,22 @@
 import jwt, { SignOptions } from "jsonwebtoken";
-
-const accessTokenTTL: string = process.env.ACCESS_TOKEN_TTL || "15m";
-const refreshTokenTTL: string = process.env.REFRESH_TOKEN_TTL || "7d";
+import config from "../config/env";
 
 export const signAccessToken = (payload: object) => {
-  return jwt.sign(payload, process.env.JWT_ACCESS_SECRET!, {
-    expiresIn: accessTokenTTL,
+  return jwt.sign(payload, config.jwt.accessSecret!, {
+    expiresIn: config.jwt.accessTtl,
   } as SignOptions);
 };
 
 export const signRefreshToken = (payload: object) => {
-  return jwt.sign(payload, process.env.JWT_REFRESH_SECRET!, {
-    expiresIn: refreshTokenTTL,
+  return jwt.sign(payload, config.jwt.refreshSecret!, {
+    expiresIn: config.jwt.refreshTtl,
   } as SignOptions);
 };
 
 export const verifyAccessToken = (token: string) => {
-  return jwt.verify(token, process.env.JWT_ACCESS_SECRET!);
+  return jwt.verify(token, config.jwt.accessSecret!);
 };
 
 export const verifyRefreshToken = (token: string) => {
-  return jwt.verify(token, process.env.JWT_REFRESH_SECRET!);
+  return jwt.verify(token, config.jwt.refreshSecret!);
 };

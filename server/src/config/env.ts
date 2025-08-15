@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config();
 
 const config = {
@@ -6,14 +6,13 @@ const config = {
   jwt: {
     accessSecret: process.env.JWT_ACCESS_SECRET,
     refreshSecret: process.env.JWT_REFRESH_SECRET,
-    accessTtl: process.env.ACCESS_TOKEN_TTL || '15m',
-    refreshTtl: process.env.REFRESH_TOKEN_TTL || '7d'
+    accessTtl: process.env.ACCESS_TOKEN_TTL || "15m",
+    refreshTtl: process.env.REFRESH_TOKEN_TTL || "7d",
   },
-  env: process.env.NODE_ENV || 'development'
 };
 
 if (!config.jwt.accessSecret || !config.jwt.refreshSecret) {
-  throw new Error('Missing JWT secrets in .env');
+  throw new Error("Missing JWT secrets in .env");
 }
 
 export default config;
