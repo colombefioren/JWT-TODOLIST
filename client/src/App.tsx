@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import TodoList from "./components/TodoList";
@@ -46,6 +47,7 @@ export default function App() {
             ? "Already have an account? Login"
             : "Need an account? Register"}
         </button>
+        <Analytics />
       </div>
     );
   }
@@ -98,6 +100,7 @@ export default function App() {
         </button>
       </div>
       <TodoList />
+      <Analytics />
     </div>
   );
 }
