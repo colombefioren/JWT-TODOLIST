@@ -1,8 +1,9 @@
+import TodoList from "./components/TodoList";
 
 const App = () => {
   return (
     <div className="bg-sky-950 text-white">
-      Hi
+      <TodoList/>
     </div>
   );
 };
