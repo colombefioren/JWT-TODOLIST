@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client" : "cd client && npm run dev",
-    "server" : "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,11 +21,9 @@
   },
   "homepage": "https://github.com/colombefioren/JWT-TODOLIST#readme",
   "dependencies": {
-    "@prisma/client": "^6.14.0",
     "typescript": "^5.9.2"
   },
   "devDependencies": {
-    "@types/morgan": "^1.9.10",
-    "prisma": "^6.14.0"
+    "@types/morgan": "^1.9.10"
   }
 }
