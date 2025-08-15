@@ -21,7 +21,7 @@ export default function LoginForm({ onLogin }: { onLogin: () => void }) {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-pink-400">
+    <div className="flex items-center justify-center bg-pink-400">
       <form onSubmit={handleSubmit} className="glass p-8 w-96 flex flex-col gap-4 animate-fade-in">
         <h2 className="text-2xl font-bold text-white text-center">💖 Login 💖</h2>
         {error && <div className="text-red-500">{error}</div>}
@@ -41,7 +41,7 @@ export default function LoginForm({ onLogin }: { onLogin: () => void }) {
           onChange={e => setPassword(e.target.value)}
           required
         />
-        <button className="bg-blue-300 cursor-pointer hover:bg-pastelGreen text-white p-2 rounded-md transition-all duration-300">
+        <button className="bg-blue-300 cursor-pointer hover:bg-green-300 text-white p-2 rounded-md transition-all duration-300">
           Login
         </button>
       </form>

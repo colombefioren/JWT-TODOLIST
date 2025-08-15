@@ -11,22 +11,27 @@ export default function App() {
   const [showRegister, setShowRegister] = useState(false);
 
   if (!userLogged) {
-    return showRegister ? (
-      <RegisterForm onRegister={() => setUserLogged(true)} />
-    ) : (
-      <LoginForm onLogin={() => setUserLogged(true)} />
+    return (
+      <div className="bg-pink-500 h-screen w-full flex flex-col items-center justify-center gap-4">
+        {showRegister ? (
+          <RegisterForm onRegister={() => setUserLogged(true)} />
+        ) : (
+          <LoginForm onLogin={() => setUserLogged(true)} />
+        )}
+
+        <button
+          onClick={() => setShowRegister((prev) => !prev)}
+          className="bg-blue-300 cursor-pointer p-2 rounded-md text-white hover:bg-green-300 transition-all duration-300"
+        >
+          {showRegister ? "Go to Login" : "Go to Register"}
+        </button>
+      </div>
     );
   }
 
   return (
     <div className="bg-pink-500 h-screen w-full">
       <div className="p-4 flex justify-end gap-2">
-        <button
-          onClick={() => setShowRegister((prev) => !prev)}
-          className="bg-blue-300 p-2 rounded-md text-white hover:bg-green-300 transition-all duration-300"
-        >
-          {showRegister ? "Go to Login" : "Go to Register"}
-        </button>
         <button
           onClick={() => {
             logout();

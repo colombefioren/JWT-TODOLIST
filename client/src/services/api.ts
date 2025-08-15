@@ -6,7 +6,7 @@ export async function apiFetch(endpoint: string, options: RequestInit = {}) {
   };
   if (token) headers["Authorization"] = `Bearer ${token}`;
 
-  const res = await fetch(`${import.meta.env.BASE_URLL}${endpoint}`, {
+  const res = await fetch(`http://localhost:7000/api${endpoint}`, {
     ...options,
     headers,
   });

@@ -40,33 +40,55 @@ export default function TodoList() {
   return (
     <div className="p-4 min-h-screen bg-pastelGreen flex flex-col items-center">
       <h1 className="text-3xl mb-4 font-bold text-white animate-bounce">
-        🌈 Todos 🌈
+        🌈 Kawaii Todos 🌈
       </h1>
+
+      {/* Input */}
       <div className="flex gap-2 mb-4">
         <input
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
-          placeholder="New Todo"
+          placeholder="Add a new cute todo..."
           className="p-2 rounded-md border border-white/50 bg-white/30 placeholder-white text-white"
         />
         <button
           onClick={handleAdd}
           className="bg-pink-300 cursor-pointer hover:bg-pastelBlue text-white p-2 rounded-md transition-all duration-300"
         >
-          Add
+          Add ✨
         </button>
       </div>
+
+      {/* Todo List */}
       <ul className="w-96 flex flex-col gap-2">
         {todos.map((todo) => (
           <li
             key={todo.id}
-            className={`glass p-2 flex justify-between items-center transition-all duration-300 ${
-              todo.completed ? "line-through text-white/70" : "text-white"
-            }`}
+            className={`glass p-2 flex justify-between items-center transition-all duration-300 
+              ${
+                todo.completed
+                  ? "bg-pastelBlue/50 text-white"
+                  : "bg-white/20 text-white"
+              }`}
           >
-            <span onClick={() => handleToggle(todo)} className="cursor-pointer">
-              {todo.title}
-            </span>
+            {/* Checkbox + Title */}
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => handleToggle(todo)}
+                className="w-5 h-5 accent-pink-300 rounded transition-all duration-300"
+              />
+              <span
+                className={`${
+                  todo.completed ? "opacity-70 line-through" : "opacity-100"
+                }`}
+              >
+                {todo.title}
+              </span>
+            </label>
+
+            {/* Delete button */}
             <button
               onClick={() => handleDelete(todo.id)}
               className="bg-red-400 p-1 rounded-md hover:bg-red-500 transition-all duration-300"
