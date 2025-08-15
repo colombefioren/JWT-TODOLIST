@@ -1,9 +1,8 @@
-import LoginForm from "./components/LoginForm";
 
 const App = () => {
   return (
-    <div className="bg-sky-950">
-      <LoginForm />
+    <div className="bg-sky-950 text-white">
+      Hi
     </div>
   );
 };
